@@ -1,0 +1,7 @@
+1. Choose the desired bacteria project.
+2. Retrieve the project number from the NCBI (National Center for Biotechnology Information) database.
+3. Download the project's TSV (Tab-Separated Values) file to obtain HTML links for SRA (Sequence Read Archive) identifiers.
+4. Aggregate all the obtained links into a single shell script and save it as "download.sh."
+5. The resulting file should resemble the following:
+     .wget ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR220/007/ERR2204597/ERR2204597_1.fastq.gz
+     .wget ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR220/007/ERR2204597/ERR2204597_2.fastq.gz
