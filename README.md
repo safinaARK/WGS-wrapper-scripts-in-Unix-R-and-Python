@@ -1,6 +1,6 @@
 # WGS-wrapper-scripts-in-Unix-R-and-Python
 Salmonella typhi and Paratyphi scripts
-## -----------------------------Download large Number of Fastq Files-----------------------------
+## -------------Download large Number of Fastq Files-------------
 1. Choose the Desired Bacterial Project
 2. Retrieve the Project Number from NCBI
 3. Obtain the Project's TSV File from ENA Browser to Access SRA Fastq HTML Links
@@ -13,7 +13,7 @@ wget ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR220/007/ERR2204597/ERR2204597_2.fastq
 6. Note that the following steps are intended for handling a large number of SRA IDs. If you only need to download a single file, you can do 
 so directly from the web page or by using the `wget` command without creating a bash script.
 
-## --------------------------------------Extract Meta-Data-----------------------------------------
+## -------------Extract Meta-Data-------------
 1. We utilized Entrez Direct to retrieve metadata for our SRA identifiers.
 
 >To install Entrez Direct:
