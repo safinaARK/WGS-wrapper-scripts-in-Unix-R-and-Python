@@ -42,7 +42,7 @@ export PATH=${HOME}/edirect:${PATH}
 
 - To configure the `PATH` for the current terminal session.
 
-4. It is consist of two steps <br>
+4. Commands to extract metadata, It consists of two steps <br>
 - Step 1 primarily involves identifying sample IDs by executing the following command:
 
 ```
