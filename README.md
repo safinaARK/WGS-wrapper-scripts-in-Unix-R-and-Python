@@ -111,4 +111,8 @@ It installs those packages which is not previously installed
 ```
 # 4. Read Trimming 
 **Removes low-quality portions while retaining the longest high-quality part of an NGS read from raw sequencing data**
+```
+./trim_fastq.sh
+```
+
 
