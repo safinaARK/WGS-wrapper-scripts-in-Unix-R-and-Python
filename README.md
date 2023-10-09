@@ -14,8 +14,8 @@ wget ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR220/007/ERR2204597/ERR2204597_2.fastq
 so directly from the web page or by using the `wget` command without creating a bash script.**
 
 ## -------------Extract Meta-Data-------------
-**1. We utilized Entrez Direct to retrieve metadata for our SRA identifiers.**
-**2. Execute the following command in a Unix terminal window.**
+**1. We utilized Entrez Direct to retrieve metadata for our SRA identifiers.**<br>
+**2. Execute the following command in a Unix terminal window for installation.**
 ```
 sh -c "$(curl -fsSL https://ftp.ncbi.nlm.nih.gov/entrez/entrezdirect/install-edirect.sh)"
 ```
