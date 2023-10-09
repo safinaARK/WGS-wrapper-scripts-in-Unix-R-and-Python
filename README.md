@@ -26,7 +26,7 @@ sh -c "$(curl -fsSL https://ftp.ncbi.nlm.nih.gov/entrez/entrezdirect/install-edi
 
 - curl -fsSL https://ftp.ncbi.nlm.nih.gov/entrez/entrezdirect/install-edirect.sh: This part of the command uses curl to download the installation script (install-edirect.sh) from the NCBI FTP server.<br> 
 - The -fsSL flags are used to specify that curl should follow redirects (-L), be silent during the download (-s), and show progress information (-S).
-sh -c "$(...)": This part of the command runs the downloaded script using the shshell. The$(...)syntax is used to execute the output of thecurl` command as a script.
+sh -c "$(...)": This command part runs the downloaded script using the shell. The (...)syntax is used to execute the curl command output as a script.
 ```
 echo "export PATH=\$HOME/edirect:\$PATH" >> $HOME/.bash_profile
 ```
@@ -79,4 +79,12 @@ xtract -pattern BioSample -NAME "(NA)" -block Id -if Id@db_label -equals "Sample
        -block Attributes -element "&LAB" > samp.csv
 
 ```
+5. Now that you have both the Fastq files and metadata, you are ready to initiate your bioinformatics analysis.
+## -------------Bioinformatics Analysis-------------
+* Install Miniconda
+[Miniconda3 Linux 64-bit](https://github.com/NU-CPGME/aku_genomics_workshop_2022/blob/master/part_1/1D_software.md)
+
+
+
+# 1. Quality check 
 
