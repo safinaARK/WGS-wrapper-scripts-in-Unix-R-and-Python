@@ -1,24 +1,21 @@
 # WGS-wrapper-scripts-in-Unix-R-and-Python
 Salmonella typhi and Paratyphi scripts
 ## -------------Download large Number of Fastq Files-------------
-1. Choose the Desired Bacterial Project
-2. Retrieve the Project Number from NCBI
-3. Obtain the Project's TSV File from ENA Browser to Access SRA Fastq HTML Links
-4. Aggregate All Links into a Shell Script (Save as "download.sh")
-5. The Shell Script Should Resemble This Format:
+**1. Choose the Desired Bacterial Project**<br>
+**2. Retrieve the Project Number from NCBI**
+**3. Obtain the Project's TSV File from ENA Browser to Access SRA Fastq HTML Links**<br>
+**4. Aggregate All Links into a Shell Script (Save as "download.sh")**<br>
+**5. The Shell Script Should Resemble This Format:**<br>
 ```
 wget ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR220/007/ERR2204597/ERR2204597_1.fastq.gz
 wget ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR220/007/ERR2204597/ERR2204597_2.fastq.gz
 ```
-6. Note that the following steps are intended for handling a large number of SRA IDs. If you only need to download a single file, you can do 
-so directly from the web page or by using the `wget` command without creating a bash script.
+**6. Note that the following steps are intended for handling a large number of SRA IDs. If you only need to download a single file, you can do 
+so directly from the web page or by using the `wget` command without creating a bash script.**
 
 ## -------------Extract Meta-Data-------------
-1. We utilized Entrez Direct to retrieve metadata for our SRA identifiers.
-
->To install Entrez Direct:
-
-2. Execute the following command in a Unix terminal window.
+**1. We utilized Entrez Direct to retrieve metadata for our SRA identifiers.**<br>
+**2. Execute the following command in a Unix terminal window for installation.**
 ```
 sh -c "$(curl -fsSL https://ftp.ncbi.nlm.nih.gov/entrez/entrezdirect/install-edirect.sh)"
 ```
@@ -42,20 +39,20 @@ export PATH=${HOME}/edirect:${PATH}
 
 - To configure the `PATH` for the current terminal session.
 
-4. Commands to extract metadata, It consists of two steps <br>
-- Step 1 primarily involves identifying sample IDs by executing the following command:
+**3. Commands to extract metadata, It consists of two steps: <br>**
+**Step 1:** primarily involves identifying sample IDs by executing the following command:
 
 ```
 epost -db sra -input sra_ids.txt -format acc |
 efetch -format runinfo -mode xml |
 xtract -pattern Row -element  Run BioProject BioSample ScientificName LibraryStrategy LibrarySelection LibrarySource LibraryLayout Platform Model Sample > output_file.csv
 ```
--The `sra_ids.txt` contains the SRA IDs.
-- Step 2 entails retrieving all the metadata for the provided sample IDs. Assuming you have a file named `sample_ids.txt` containing the sample IDs, you can use the following command:
+The `sra_ids.txt` contains the SRA IDs.<br>
+**Step 2:** entails retrieving all the metadata for the provided sample IDs. Assuming you have a file named `sample_ids.txt` containing the sample IDs, you can use the following command:
 
 ```
 # Use E-utilities to search the "biosample" database using a list of accession numbers from "sra.txt"
-epost -db biosample -input sra.txt -format acc |
+epost -db biosample -input sample_ids.txt -format acc |
 # Retrieve metadata in XML format for each BioSample accession
 efetch -format runinfo -mode xml |
 # Extract specific information from the XML output
@@ -76,10 +73,10 @@ xtract -pattern BioSample -NAME "(NA)" -block Id -if Id@db_label -equals "Sample
        -block Attributes -element "&PACKAGE" -IFSAC "(NA)" -block Attribute -if Attribute@attribute_name -equals "IFSAC+ Category" -IFSAC Attribute \
        -block Attributes -element "&IFSAC" -FOOD "(NA)" -block Attribute -if Attribute@attribute_name -equals "FoodOn Ontology Term" -FOOD Attribute \
        -block Attributes -element "&FOOD" -LAB "(NA)" -block Attribute -if Attribute@attribute_name -equals "collected_by" -LAB Attribute \
-       -block Attributes -element "&LAB" > samp.csv
+       -block Attributes -element "&LAB" > output_file.csv
 
 ```
-5. Now that you have both the Fastq files and metadata, you are ready to initiate your bioinformatics analysis.
+**5. Now that you have both the Fastq files and metadata, you are ready to initiate your bioinformatics analysis.**
 ## -------------Bioinformatics Analysis-------------
 * Install Miniconda
 [Miniconda3 Linux 64-bit](https://github.com/NU-CPGME/aku_genomics_workshop_2022/blob/master/part_1/1D_software.md)
@@ -111,4 +108,8 @@ It installs those packages which is not previously installed
 ```
 # 4. Read Trimming 
 **Removes low-quality portions while retaining the longest high-quality part of an NGS read from raw sequencing data**
+```
+./trim_fastq.sh
+```
+
 
