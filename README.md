@@ -97,9 +97,7 @@ conda config --add channels defaults
 conda env create -f WGS_environment.yaml
 ```
 It creates a Conda environment named 'WGS_Analysis' and installs all the necessary packages.
-> File Description:
-> 
-* Name of directory, channel name, and dependencies
+
 # 2. Install packages Manually 
 ```
 pip install -r python_pakages.txt
@@ -111,5 +109,6 @@ It installs those packages which is not previously installed
 ```
 ./qc.sh
 ```
-
+# 4. Read Trimming 
+**Removes low-quality portions while retaining the longest high-quality part of an NGS read from raw sequencing data**
 
