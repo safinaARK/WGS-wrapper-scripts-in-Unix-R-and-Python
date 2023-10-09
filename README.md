@@ -89,6 +89,10 @@ conda config --add channels bioconda
 conda config --add channels daler
 conda config --add channels defaults
 ```
+**Before executing the script we need to add executive rights because we have a large number of files with different extensions. So,**
+```
+chmod +x *.{py,sh,pl}
+```
 # 1. Create Environment 
 ```
 conda env create -f WGS_environment.yaml
@@ -111,5 +115,5 @@ It installs those packages which is not previously installed
 ```
 ./trim_fastq.sh
 ```
-
+# 5. 
 
