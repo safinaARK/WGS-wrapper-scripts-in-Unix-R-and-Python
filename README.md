@@ -39,7 +39,7 @@ export PATH=${HOME}/edirect:${PATH}
 
 - To configure the `PATH` for the current terminal session.
 
-**3. Commands to extract metadata, It consists of two steps <br>**
+**3. Commands to extract metadata, It consists of two steps: <br>**
 **Step 1:** primarily involves identifying sample IDs by executing the following command:
 
 ```
@@ -47,12 +47,12 @@ epost -db sra -input sra_ids.txt -format acc |
 efetch -format runinfo -mode xml |
 xtract -pattern Row -element  Run BioProject BioSample ScientificName LibraryStrategy LibrarySelection LibrarySource LibraryLayout Platform Model Sample > output_file.csv
 ```
--The `sra_ids.txt` contains the SRA IDs.
+The `sra_ids.txt` contains the SRA IDs.<br>
 **Step 2:** entails retrieving all the metadata for the provided sample IDs. Assuming you have a file named `sample_ids.txt` containing the sample IDs, you can use the following command:
 
 ```
 # Use E-utilities to search the "biosample" database using a list of accession numbers from "sra.txt"
-epost -db biosample -input sra.txt -format acc |
+epost -db biosample -input sample_ids.txt -format acc |
 # Retrieve metadata in XML format for each BioSample accession
 efetch -format runinfo -mode xml |
 # Extract specific information from the XML output
@@ -73,7 +73,7 @@ xtract -pattern BioSample -NAME "(NA)" -block Id -if Id@db_label -equals "Sample
        -block Attributes -element "&PACKAGE" -IFSAC "(NA)" -block Attribute -if Attribute@attribute_name -equals "IFSAC+ Category" -IFSAC Attribute \
        -block Attributes -element "&IFSAC" -FOOD "(NA)" -block Attribute -if Attribute@attribute_name -equals "FoodOn Ontology Term" -FOOD Attribute \
        -block Attributes -element "&FOOD" -LAB "(NA)" -block Attribute -if Attribute@attribute_name -equals "collected_by" -LAB Attribute \
-       -block Attributes -element "&LAB" > samp.csv
+       -block Attributes -element "&LAB" > output_file.csv
 
 ```
 **5. Now that you have both the Fastq files and metadata, you are ready to initiate your bioinformatics analysis.**
