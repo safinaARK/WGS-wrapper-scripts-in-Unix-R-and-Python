@@ -115,5 +115,10 @@ It installs those packages which is not previously installed
 ```
 ./trim_fastq.sh
 ```
-# 5. 
+# 5. Assembly 
+**The process of aligning and combining fragments to reconstruct the original DNA sequence**
+```
+./assemble.sh
+```
+
 
