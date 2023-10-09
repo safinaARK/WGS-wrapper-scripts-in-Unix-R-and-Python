@@ -105,7 +105,7 @@ pip install -r python_pakages.txt
 ```
 It installs those packages which is not previously installed 
 
-# 3. Quality check 
+# 3. Quality Check (QC)
 **Evaluate the quality of your NGS data using FastQC**
 ```
 ./qc.sh
