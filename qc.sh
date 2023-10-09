@@ -1,5 +1,5 @@
 #!/bin/bash
 
-mkdir QC_RAW_READS
-fastqc fastq_ST/* -o QC_RAW_READS
-
+mkdir QC
+fastqc fastq/. -o QC_RAW_READS
+# fastq/.: all fastq files present in directory fastq
