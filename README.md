@@ -94,13 +94,13 @@ conda config --add channels defaults
 ```
 # 1. Create Environment 
 ```
-conda env create -f environment.yaml
+conda env create -f WGS_environment.yaml
 ```
 It creates a Conda environment named 'WGS_Analysis' and installs all the necessary packages.
 > File Description:
 > 
 * Name of directory, channel name, and dependencies
-# 2. Install python packages using pip 
+# 2. Install packages Manually 
 ```
 pip install -r pip-requirements.txt
 ```
