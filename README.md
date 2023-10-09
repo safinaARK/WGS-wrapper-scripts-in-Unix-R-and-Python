@@ -102,9 +102,9 @@ It creates a Conda environment named 'WGS_Analysis' and installs all the necessa
 * Name of directory, channel name, and dependencies
 # 2. Install packages Manually 
 ```
-pip install -r pip-requirements.txt
+pip install -r python_pakages.txt
 ```
-it installs those packages which is not previously installed 
+It installs those packages which is not previously installed 
 
 # . Quality check 
 
