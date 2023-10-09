@@ -84,7 +84,28 @@ xtract -pattern BioSample -NAME "(NA)" -block Id -if Id@db_label -equals "Sample
 * Install Miniconda
 [Miniconda3 Linux 64-bit](https://github.com/NU-CPGME/aku_genomics_workshop_2022/blob/master/part_1/1D_software.md)
 
+All the necessary installation instructions for Miniconda can be found in the links above.
+After installation add the following channels
+```
+conda config --add channels conda-forge
+conda config --add channels bioconda
+conda config --add channels daler
+conda config --add channels defaults
+```
+# 1. Create Environment 
+```
+conda env create -f environment.yaml
+```
+It creates a Conda environment named 'WGS_Analysis' and installs all the necessary packages.
+> File Description:
+> 
+* Name of directory, channel name, and dependencies
+# 2. Install python packages using pip 
+```
+pip install -r pip-requirements.txt
+```
+it installs those packages which is not previously installed 
 
+# . Quality check 
 
-# 1. Quality check 
 
