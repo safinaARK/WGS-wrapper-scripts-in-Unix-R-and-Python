@@ -1,6 +1,15 @@
 #!/bin/bash
-#make new directory and transfer all contigs file into it with new name 
 
-mkdir fasta
-for f in *_assemble;do  
-cp "$f/contigs.fasta" fasta/"$(basename "$f" '_assemble').fasta ";done
+
+# Create the 'fasta' folder if it doesn't exist
+mkdir -p fasta
+
+# Iterate over all '*_assemble' folders
+for folder in *_assemble; do 
+new_name=${folder%%_assemble};if [ -e "$folder/contigs.fasta" ]; then
+  # Check if 'contigs.fasta' exists in the folder
+  if [ -e "$folder/contigs.fasta" ]; then
+    # Rename 'contigs.fasta' to the folder name
+    cp "$folder/contigs.fasta" "fasta/$new_name.fasta"
+  fi
+done
