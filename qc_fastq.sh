@@ -2,4 +2,6 @@
 
 mkdir QC
 fastqc fastq/. -o QC_Fastq
-# fastq/.: all fastq files present in directory fastq
+# folder(fastq) all fastq files present in directory fastq
+##RUN MULTIQC ON QC_Fastq
+multiqc QC_Fastq
