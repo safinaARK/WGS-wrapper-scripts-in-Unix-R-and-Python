@@ -120,7 +120,7 @@ It installs those packages which is not previously installed
 ```
 ./assemble.sh
 ```
-**To rename all contigs with SRA IDs, execute the script 'rename_contigs.sh'**
+**To rename all contigs with SRA IDs, execute the script `rename_contigs.sh`**
 ```
 ./rename_contigs.sh
 ```
