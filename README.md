@@ -105,7 +105,7 @@ pip install -r python_pakages.txt
 ```
 It installs those packages which is not previously installed 
 
-# 3. Quality check 
+# 3. Quality Check (QC)
 **Evaluate the quality of your NGS data using FastQC**
 ```
 ./qc.sh
@@ -115,5 +115,10 @@ It installs those packages which is not previously installed
 ```
 ./trim_fastq.sh
 ```
-# 5. 
+# 5. Assembly 
+**The process of aligning and combining fragments to reconstruct the original DNA sequence**
+```
+./assemble.sh
+```
+
 
