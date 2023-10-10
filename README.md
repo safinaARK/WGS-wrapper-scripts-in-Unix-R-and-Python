@@ -124,5 +124,10 @@ It installs those packages which is not previously installed
 ```
 ./rename_contigs.sh
 ```
+# 6. Annotation 
+**Genomic annotation identifies functional elements in a genome, including transcribed regions and regulatory elements**
+```
+./annotation.sh
+```
 
 
