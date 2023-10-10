@@ -122,7 +122,7 @@ It installs those packages which is not previously installed
 ```
 **To rename all contigs with SRA IDs, execute the script 'rename_contigs.sh'**
 ```
-rename_contigs.sh
+./rename_contigs.sh
 ```
 
 
