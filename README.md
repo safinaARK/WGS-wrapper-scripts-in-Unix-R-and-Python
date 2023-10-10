@@ -129,5 +129,10 @@ It installs those packages which is not previously installed
 ```
 ./annotation.sh
 ```
+**Perform reference annotation and organize all GFF files into a single folder**
+```
+./gffs
+```
+# 7. 
 
 
