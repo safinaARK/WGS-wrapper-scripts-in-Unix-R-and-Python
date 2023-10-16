@@ -138,3 +138,8 @@ It installs those packages which is not previously installed
 ```
 ./dendogram.sh
 ```
+# 7.2. PanGenome Analysis
+**Consolidate all GFF files into a single folder**
+```
+./gffs.sh
+```
