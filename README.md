@@ -105,8 +105,8 @@ pip install -r python_pakages.txt
 ```
 It installs those packages which is not previously installed 
 
-# 3. Quality Check (QC)
-**Evaluate the quality of your NGS data using FastQC**
+# 3. Quality Check (QC) 
+**Evaluate the quality of your NGS data using FastQC and MultiQC**
 ```
 ./qc.sh
 ```
@@ -131,8 +131,10 @@ It installs those packages which is not previously installed
 ```
 **Perform reference annotation and organize all GFF files into a single folder**
 ```
-./gffs
+./gffs.sh
 ```
-# 7. 
-
-
+# 7. Comparative Analysis 
+**7.1. Dendogram dRep**
+```
+./dendogram.sh
+```
