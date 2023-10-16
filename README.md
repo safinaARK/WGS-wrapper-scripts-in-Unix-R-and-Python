@@ -134,12 +134,17 @@ It installs those packages which is not previously installed
 ./gffs.sh
 ```
 # 7. Comparative Analysis 
-**7.1. Dendogram dRep**
+## 7.1. Dendogram dRep
 ```
 ./dendogram.sh
 ```
-# 7.2. PanGenome Analysis
+## 7.2. PanGenome Analysis<br>
+
 **Consolidate all GFF files into a single folder**
 ```
 ./gffs.sh
+```
+**Execute the pengenome.sh script**
+```
+./pangenome.sh
 ```
